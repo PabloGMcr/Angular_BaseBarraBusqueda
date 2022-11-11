@@ -1,13 +1,25 @@
-<div class="card">
+<h1 class="animated fadein fast text-center">Heroes</h1>
+<hr>
+<div class="card-columns">
 
-    <img class="card-img-top img-fluid" src="#" alt="">
-    <div class="card-body">
-        <h4 class="card-tittle">Titulo</h4>
-        <p class="card-tex">Soy un texto</p>
-        <p class="card-tex"><small class="text-mute">Soy un texto 2</small>></p>
+    <div class=" card animated fadein  fast" *ngFor="let item of Heroes" >
 
-        <button class="btn btn-outline-primary btn-block">Ver mas</button>
+<img class="card-img-top img-fluid" [src]="item.imagen" alt="">
 
-    </div>
+<div class="card-body"> 
+
+<h4 class="car-title">{{item.nombre}}</h4>
+<p class="card-tex">{{item.biografia}}</p>
+<p class="card-tex"><small class=" tex-mute">{{item.Universo}}</small></p>
+
+<button class="btn btn-outline-primary btn-block">Ver mas</button>
+</div>
+    
+</div>
 
 </div>
+
+
+
+
+
