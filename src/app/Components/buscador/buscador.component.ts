@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ConsultasService } from 'src/app/Services/consultas.service';
 
 @Component({
   selector: 'app-buscador',
@@ -8,11 +9,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BuscadorComponent implements OnInit {
 
-  constructor(private _route: ActivatedRoute) { }
+  mivariable:any[]=[]
+
+  constructor(private _route: ActivatedRoute, 
+              private _heroeservice: ConsultasService) { }
 
   ngOnInit(): void {
     this._route.params.subscribe(data=>{
       console.log(data);
+      
+      this.mivariable=this._heroeservice.BuscarHeroes(data['termino'])
+      console.log(this.mivariable)
     })
   }
 

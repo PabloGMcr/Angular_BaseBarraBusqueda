@@ -41,7 +41,23 @@ export class ConsultasService {
     return this.Heroes;
   }
 
+BuscarHeroes(termino:string){
+  
+  let heroesarr:IHeroe[]=[];
+  
+  termino=termino.toLocaleLowerCase();
+  
+  for (let index = 0; index < this.Heroes.length; index++) {
+    let Individual = this.Heroes[index]
+    let nombre = Individual.nombre.toLocaleLowerCase()
+    if(nombre.indexOf(termino)>=0){
+      Individual.idx=index;
+      heroesarr.push(Individual)
 
+    }
+ }
+ return heroesarr;
+}
 
 
 
@@ -69,5 +85,6 @@ export interface IHeroe{
   imagen:string,
   Fecha: string,
   Universo:string
+  idx?:number
 
 }
