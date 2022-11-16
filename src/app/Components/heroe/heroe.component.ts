@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConsultasService } from 'src/app/Services/consultas.service';
+import { ConsultasService, IHeroe } from 'src/app/Services/consultas.service';
 
 @Component({
   selector: 'app-heroe',
@@ -8,7 +8,7 @@ import { ConsultasService } from 'src/app/Services/consultas.service';
 })
 export class HeroeComponent implements OnInit {
   //Local
-  Heroes:any=[];
+  Heroes:IHeroe[]=[];
 
   constructor( private _Heroe:ConsultasService) { }
 

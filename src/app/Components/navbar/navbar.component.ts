@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ConsultasService } from 'src/app/Services/consultas.service';
 
 @Component({
@@ -8,11 +9,17 @@ import { ConsultasService } from 'src/app/Services/consultas.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private _gato:ConsultasService) { }
+  constructor(private _router:Router) { }
 
   ngOnInit(): void {
 
-    this._gato.LlamaraWarnert();
+    
+  }
+
+  buscarheroe(termino:string){
+    console.log(termino);
+    this._router.navigate(['/buscar',termino])
   }
 
 }
+

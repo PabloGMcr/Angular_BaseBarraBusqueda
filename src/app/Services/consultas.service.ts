@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ConsultasService {
 
-  private Heroes:any=[
+  private Heroes:IHeroe[]=[
   
     {
       nombre:"Batman",
@@ -37,7 +37,7 @@ export class ConsultasService {
 
   }
 
-  GetHeroes():void{
+  GetHeroes():IHeroe[]{
     return this.Heroes;
   }
 
@@ -61,3 +61,13 @@ export class ConsultasService {
 
 
 } 
+
+export interface IHeroe{
+
+  nombre: string,
+  biografia: string,
+  imagen:string,
+  Fecha: string,
+  Universo:string
+
+}

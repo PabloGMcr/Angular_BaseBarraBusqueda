@@ -22,7 +22,12 @@
           </li>
         </ul>
     
-           
+         <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm2" type="text" placeholder="Buscar" #buscartexto>
+
+          <button (click)="buscarheroe(buscartexto.value)" class="btn btn-outline-primary my-2sm-0" type="button">Buscar</button>
+
+         </form>  
         
       </div>
     </nav>
